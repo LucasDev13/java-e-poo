@@ -11,6 +11,9 @@ public class SaidaDados {
 		System.out.println("Bom dia!");//com quebra de lina
 
 		int y = 32;
+		String nome = "Maria";
+		int idade = 31;
+		double renda = 4000.0;
 		
 		System.out.println(y);
 		
@@ -23,6 +26,13 @@ public class SaidaDados {
 		
 		Locale.setDefault(Locale.US);//confiração do separador de virgula (,) para ponto (.)
 		System.out.printf("Com separador de ponto (.) -> " + "%.4f%n", x);//com formataçao de quatro casas decimais e com separador com ponto(.)
+		
+		
+		System.out.println("Resultado: " + x + " metros.");// utilização do operador + para concatenação
+		
+		System.out.printf("Resultado = %.2f metros%n", x);
+		
+		System.out.printf("%s tem %d anos e ganha R$ %.2f reais%n", nome, idade, renda);
 		
 	}
 
