@@ -34,7 +34,7 @@ public class MainProduct {
 		System.out.println("Informe a quantidade inserida no estoque: ");
 		//p.quantidade = sc.nextInt();
 		int quantity = sc.nextInt();
-		p.addProdutos(quantity);//essa linha faz a atualização da quantidade em estoque do objeto product
+		//p.addProdutos(quantity);//essa linha faz a atualização da quantidade em estoque do objeto product
 		
 		
 		System.out.println("update dos " + p);

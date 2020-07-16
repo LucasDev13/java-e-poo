@@ -8,6 +8,9 @@ public class Product {
 	private int estoqueMaximo;
 	private int estoqueMinimo;
 	
+	public Product() {
+	}
+	
 	//contrutor com todos os parametros
 	public Product (String nomeProduto, double preco, int quantidade) {
 		this.nomeProduto = nomeProduto;
@@ -54,22 +57,33 @@ public class Product {
 	
 	/**
 	 * Esse método trabalho com a inclusao de mais produtos no estoque 
-	 * e trabalha com limite de estoque que e de 20. Verificanco qual e o limite e nao deixando incluir mais itens 
+	 * e trabalha com limite de estoque que e de 20. Verificanco qual e o limite e nao deixando incluir mais itens
+	 * 
+	 * 
 	 * @param quantidade
 	 */
-	public void addProdutos(int quantidade) {
+	public Product[] addProdutos(Product[] vect, int i, int quantidade, String nomeProduto, double preco) {
+		int cont = 0;
 		System.out.println("vai comecar.");//essa verificação será quando o estoque estivar no maximo.
-		if(quantidade <= this.quantidade) {
+		if(this.quantidade <= quantidade) {
 			System.out.println("inserido...");
-			this.quantidade += quantidade;
+			if(cont > i || cont == 0) {
+				//esse vetor está ficando localmente com apenas um valor.
+				//colocar um return ???
+				
+				//não está atualizando o indice do vetor.
+				vect[i] = new Product(nomeProduto, preco, quantidade);
+			}
+			//this.quantidade += quantidade;
 		}else {
 			System.out.println("EXCEDEU O LIMITE DO ESTOQUE!");
 		}
+		return vect;//precisa retornar no final do método.
 	}
 	
 	/**
 	 * Esee método trabalha com a exclusao de itens do estoque
-	 * e com estoque minimo que e de 5. Verificando o estoque minimo e nao deixando excluir intens alem da cota minima.
+	 * e com estoque minimo que é de 5. Verificando o estoque minimo e nao deixando excluir intens alem da cota minima.
 	 * @param quantidade
 	 */
 	public void removeProdutos(int quantidade) {
