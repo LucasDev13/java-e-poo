@@ -17,6 +17,7 @@ public class MainFuncionario {
 		int n = sc.nextInt();
 
 		List<Funcionario> funcis = new ArrayList<>();
+		Funcionario fun = null;
 
 		for (int i = 0; i < n; i++) {
 			System.out.println();
@@ -35,8 +36,7 @@ public class MainFuncionario {
 
 			System.out.print("Salario: ");
 			Double salario = sc.nextDouble();
-			
-			Funcionario fun = new Funcionario(id, nome, salario);//instancia o objeto passando os argumento para o construtor.
+			fun = new Funcionario(id, nome, salario);//instancia o objeto passando os argumento para o construtor.
 			
 			funcis.add(fun);//esse processo a cada interação do for será adicionado o objeto fun na lista. 
 
@@ -45,9 +45,9 @@ public class MainFuncionario {
 		System.out.println();
 		System.out.println("Digite o id do funcionario que ira ganhar o aumento de salario: ");
 		int idSalary = sc.nextInt();
-		//Integer pos = position(funcis, idSalary);
+		Integer pos = fun.position(funcis, idSalary);
 		
-		Funcionario fun = funcis.stream().filter(x -> x.getId() == idSalary).findFirst().orElse(null);
+		//Funcionario fun = funcis.stream().filter(x -> x.getId() == idSalary).findFirst().orElse(null);
 		if(fun == null) {
 			System.out.println("This id not exist!");
 		}else {
@@ -67,14 +67,14 @@ public class MainFuncionario {
 	}
 	
 	//funçao utilizada para procurar o id na lista.
-	public static Integer position(List<Funcionario> list, int id) {
-		for (int i = 0; i < list.size(); i++) {
-			if(list.get(i).getId() == id) {
-				return i;
-			}
-		}
-		return null;
-	}
+//	public static Integer position(List<Funcionario> list, int id) {
+//		for (int i = 0; i < list.size(); i++) {
+//			if(list.get(i).getId() == id) {
+//				return i;
+//			}
+//		}
+//		return null;
+//	}
 	
 	//funçao para procurar o id utilizando lambda
 	public static boolean hasId(List<Funcionario> list, int id) {

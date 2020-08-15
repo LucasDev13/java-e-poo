@@ -8,6 +8,7 @@ public class Product {
 	private int estoqueMaximo;
 	private int estoqueMinimo;
 	
+	//construtor padrao
 	public Product() {
 	}
 	

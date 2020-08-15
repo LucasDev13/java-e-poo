@@ -1,5 +1,7 @@
 package br.com.poo.entities;
 
+import java.util.List;
+
 public class Funcionario {
 	private Integer id;
 	private String nome;
@@ -42,6 +44,15 @@ public class Funcionario {
 	//método para aumento de salario do funcionario.
 	public void aumento(Double porcentagem) {
 		salario += porcentagem * salario / 100.00;
+	}
+	
+	public Integer position(List<Funcionario> list, int id) {
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i).getId() == id) {
+				return i;
+			}
+		}
+		return null;
 	}
 	
 	@Override
